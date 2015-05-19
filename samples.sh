@@ -9,12 +9,11 @@ cd samples
 # New git repo
 git init
 
+# Create a Release Branch
+git checkout -b release/1.0.0
+
 # Delete the Master Branch
 git branch -d master
-
-# Create a Release Branch
-git branch release/1.0.0
-git checkout release/1.0.0
 
 # Prepare the first commit
 echo "lorem ipsum" > foo.txt
@@ -29,11 +28,6 @@ git commit -am "Second Commit"
 # Feature Branches
 git branch feature/dashboard-screen
 git branch feature/login-screen
-
-# Prepare the third commit
-echo "lorem ipsum" > bar.txt
-git add -A
-git commit -am "Third Commit"
 
 # Feature Branch
 git checkout feature/login-screen
@@ -66,3 +60,22 @@ git commit -am "Dashboard screen validation"
 # Merge the feature branch
 git checkout release/1.0.0
 #git merge feature/login-screen --no-ff
+
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+git status
+
+# Prepare the third commit
+echo "lorem ipsum" > foobar.txt
+git add -A
+git commit -am "Third Commit"
