@@ -22,6 +22,10 @@ SimpleGit advocates meaningful names. The **master** branch has many different m
 
     git branch -d master
 
+To delete the remote master branch use:
+
+    git push origin --delete master
+
 Remember, git branches are just pointers. By deleting master, we don't lose any code or commits, as long as we have already created a release branch.
 
 ## Feature Branch
