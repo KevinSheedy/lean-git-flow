@@ -10,7 +10,7 @@ Start by creating a branch for your upcoming release:
 Release branches are named using [Semantic Versioning](http://semver.org/) i.e. MAJOR.MINOR.PATCH.
 
 ## Delete the master branch
-SimplerGitFlow advocates meaningful names. The **master** branch has many different meanings, depending on the project. With SimplerGitFlow, we delete the master branch.
+**SimplerGitFlow** advocates meaningful names. The **master** branch has many different meanings, depending on the project. With SimplerGitFlow, we delete the master branch.
 
     git branch -d master
 
@@ -90,22 +90,8 @@ Many Git Servers (GitHub, GitLab, GitStash) allow you to specify a default branc
 ## Not sure what to name your branch?
 If you're not certain what version your next release will be, that's not a problem. Give it a provisional version number and you can change it later. For example, if your last release was **2.2.1** then you could provisionally create a **release/2.3.0** branch. Later, you may decide that the next release will actually be **3.0.0**. In that case, simply create a **release/3.0.0** branch and delete **release/2.3.0**.
 
-## Why not use GitFlow?
-
-### Fewer Branches
-Sometimes less is more.
-
-### Meaningful Branch names
-The names **develop** and **master** don't carry much meaning unless you've read the GitFlow article. A newbie looking at your repo may not understand their purpose. **SimplerGitFlow** gives every branch an intuitive, meaningful name.
-
-### Less to do before a release
-With GitFlow, the procedure immediately before a release is a bit complex. You have to create release/branch off develop, merge it master and apply a tag. It's a little unclear as to which branch you perform the final build on. With SimplerGitFlow, all builds are on the release branch. There is no last minute branching or merging.
-
-### The master branch doesn't just contain
-
-
 ## Other Workflows
-Check out these other git workflows and pick the one that suits you best:
+Check out these other git workflows and pick the one that suits you:
 
 - [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
 - [GitHub Flow](https://guides.github.com/introduction/flow/)
