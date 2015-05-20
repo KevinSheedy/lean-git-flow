@@ -76,11 +76,8 @@ In this example, a 2nd release branch has been created and the two remaining fea
 
 ![alt text](./images/tortoise-multi-branch.png)
 
-## Patch Release
-If you need to fix a production bug, create a patch release branch and increment the release number eg **release/1.0.1**
-
 ## Branch from a tag
-Release branches can be branched off other release branches or from an release tag:
+Release branches can be branched off other release branches or from a tag. This is useful for patch releases:
 
     git checkout -b release/1.0.1 <tagname>
 
