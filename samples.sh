@@ -74,3 +74,12 @@ git commit -am "Login screen validation"
 git checkout release/1.0.0
 git merge feature/login-screen --no-ff
 
+
+# Create a release branch
+git checkout -b release/2.0.0
+git merge feature/dashboard-screen --no-ff
+git merge feature/customer-screen --no-ff
+
+# Tag the branch and then delete the branch
+git tag 1.0.0 release/1.0.0
+git branch -d release/1.0.0
