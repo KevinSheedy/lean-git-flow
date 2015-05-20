@@ -71,6 +71,11 @@ Once a release has shipped and is is tagged, there is no more need for the relea
 ## Patch Release Branch / Hotfix
 If you need to fix a production bug, create a patch release branch and increment the release number eg **release/1.0.1**.
 
+## Create Release branch from a tag
+Release branches can be branched off other release branches or from an release tag:
+
+    git checkout -b release/1.0.1 1.0.0
+
 ## Default Branch
 Many Git Servers (GitHub, GitLab, GitStash) allow you to specify a default branch. This branch gets displayed when you browse to the repo via the web interface and gets checked out when you clone the repo. By default, it's usually master. With SimpleGit, it's up to you to set the default branch to whatever release branch you see fit.
 
