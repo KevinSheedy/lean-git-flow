@@ -1,16 +1,20 @@
 # A simpler Git branching model
 
-**SimplerGitFlow** is a git workflow similar to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) but simpler. It has only two types of branches, **feature branches** and **release branches**. Need to customise the workflow for your team? Feel free to [Fork It](https://help.github.com/articles/fork-a-repo/).
+**SimplerGitFlow** is a git workflow similar to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) but simpler. It has only two types of branches, **feature branches** and **release branches**.
+
+This workflow is particularly suited to teams on a regular release cycle, for example **monthly or quarterly**. It is less well suited to teams releasing extremely frequently.
+
+To customise the workflow for your own team, simply [Fork It](https://help.github.com/articles/fork-a-repo/) on GitHub and document your changes.
 
 ## Release Branch
 Start by creating a branch for your upcoming release:
 
     git checkout -b release/1.0.0
 
-Release branches are named using [Semantic Versioning](http://semver.org/) i.e. MAJOR.MINOR.PATCH.
+Release branches are named using [Semantic Versioning](http://semver.org/) i.e. **MAJOR.MINOR.PATCH**
 
 ## Delete the master branch
-**SimplerGitFlow** advocates meaningful names. The **master** branch has many different meanings, depending on the project. With SimplerGitFlow, we delete the master branch.
+**SimplerGitFlow** advocates meaningful names. The term **master** can have different meanings depending on the context. With SimplerGitFlow, we delete the master branch.
 
     git branch -d master
 
@@ -45,8 +49,13 @@ This example shows 3 feature branches and one release branch. Only one of the fe
 
 This is a screenshot of a git repo viewed using the popular open source [TortoiseGit](https://code.google.com/p/tortoisegit/) client. It is important to be comfortable looking at real git histories like this, as conceptual flowcharts can be misleading.
 
+## Tag Every Build
+Every build is tagged by your CI Server using the [Semantic Versioning](http://semver.org/) convention: **MAJOR.MINOR.PATCH+BUILD**
+
+    git tag 1.0.0+25
+
 ## Commit directly to the release branch
-If your change is small or your team is small, you may choose to commit directly to the release branch. It's your choice. Use your best judgement when to use a feature branch and when to commit directly to the release branch. This is useful when you need to make a very small change like a spelling correction.
+When appropriate, you may choose to commit directly to the release branch. You and your team decide if this is allowed. Use your best judgement when to use a feature branch and when to commit directly to the release branch. This is useful when you need to make a very small change like a spelling correction.
 
 ## Parallel Release Branches
 It is normal to have multiple release branches in parallel. If you are developing a webapp, you may only ever have one or two release branches at a time. For example, one release branch may be for the final few bugfixes for an imminent release while a 2nd release branch is for new features that will be released further in the future. However, if your project is a library, you may have many versions in production and may have many release branches. Release branches are created off other release branches (or sometimes from tags).
