@@ -6,6 +6,9 @@ This workflow is particularly suited to teams on a regular release cycle, for ex
 
 To customise the workflow for your own team, simply [Fork It](https://help.github.com/articles/fork-a-repo/) on GitHub and document your changes.
 
+## The Principle of KISS ["Keep It Simple Stupid"](https://en.wikipedia.org/wiki/KISS_principle)
+What about the master, develop, integration branches? [You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it). We start with the simplest possible branching strategy and don't add any more complexity unless absolutely necessary.
+
 ## Release Branch
 Start by creating a branch for your upcoming release:
 
@@ -33,8 +36,15 @@ A feature branch provides an isolated sandbox to do some work. That work could b
 
     git commit -m "This is my new feature"
 
+## Push your Feature Branch (or not)
+If you want to share your feature branch with the team, push it to the central repo. This is often done so a code review can take place.
+
+    git push origin feature/login-screen
+
+Alternatively, you may decide to keep your feature branch locally and to skip this step.
+
 ## Merge to the release branch
-Once you decide your feature is ready to target a particular release, merge it:
+Once you decide your feature is ready to target a particular release, merge it. You can do the merge locally or on the server using a [Pull Request](https://help.github.com/articles/using-pull-requests/). A Pull Request allows for a code review to take place. To do it locally use:
 
     git checkout release/1.0.0
 
