@@ -1,18 +1,12 @@
 # A Lean Git branching model
 
-**Lean Git Flow** is a branching strategy designed to be as [Lean](https://en.wikipedia.org/wiki/Lean_software_development) as possible. It has only two types of branches, **feature branches** and **release branches**.
+**Lean Git Flow** eliminates waste by removing unnecessary branching and merging. It is particularly suited to teams on a regular release cycle, ie **monthly or quarterly**. To customise the workflow for your own team, feel free to [Fork It](https://help.github.com/articles/fork-a-repo/).
 
-This workflow is particularly suited to teams on a regular release cycle, for example **monthly or quarterly**. It is less well suited to teams releasing extremely frequently.
-
-To customise the workflow for your own team, simply [Fork It](https://help.github.com/articles/fork-a-repo/) on GitHub and document your changes.
-
-## The Principle of KISS ["Keep It Simple Stupid"](https://en.wikipedia.org/wiki/KISS_principle)
-**Lean Git Flow** eliminates any unnecessary branches and merges.
+![alt text](./images/branching-diagram/branching-diagram.png)
 
 
-
-## Release Branch
-Start by creating a branch for your upcoming release:
+## Release 1.0.0 Branch
+We start by creating a release branch. For now, this is also the mainline/integration branch:
 
     git checkout -b release/1.0.0
 
@@ -20,8 +14,34 @@ Release branches are named using [Semantic Versioning](http://semver.org/) i.e. 
 
 ![alt text](./images/branching-diagram/01-branching-diagram.png)
 
+## Release 2.0.0 Branch
+As soon as we need to commit some code that will not be part of release/1.0.0, we create a release/2.0.0 branch.
+
+    git branch release/2.0.0
+
+![alt text](./images/branching-diagram/02-branching-diagram.png)
+
+## Merge 1.0.0 into 2.0.0
+Once release/1.0.0 has shipped, we merge it forward into release/2.0.0
+
+    git checkout release/2.0.0
+    git merge release/1.0.0
+
+![alt text](./images/branching-diagram/03-branching-diagram.png)
+
+## Release 3.0.0 Branch
+Again, once we need to commit code that will not be part of release/2.0.0, we create a release/3.0.0 branch.
+
+    git branch release/3.0.0
+
+![alt text](./images/branching-diagram/04-branching-diagram.png)
+
+## Continue Indefinitely
+This process of creating one release branch per release and merging it forward can continue indefinitely.
+![alt text](./images/branching-diagram/05-branching-diagram.png)
+
 ## Delete the master branch
-**LeanGitFlow** advocates meaningful names. The term **master** can have different meanings depending on the context. With LeanGitFlow, we delete the master branch.
+The term **master** can have different meanings depending on the context. With LeanGitFlow, we delete the master branch.
 
     git branch -d master
 
@@ -30,6 +50,7 @@ To delete the remote master branch use:
     git push origin --delete master
 
 Remember, git branches are just pointers. By deleting master, we don't lose any code or commits, as long as we have already created a release branch.
+
 
 ## Feature Branch
 A feature branch provides an isolated sandbox to do some work. That work could be a **bugfix**, a new **feature** or just an **experiment**. If you commit your work to a feature branch, it stays completely isolated from all other branches. This is very useful if you need to save your work and switch to working on a different task before the feature is complete.
