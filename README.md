@@ -6,7 +6,7 @@
 
 
 ## Release 1.0.0 Branch
-We start by creating a release branch. For now, this is also the mainline/integration branch:
+We start by creating a release branch. For now, this is also the **mainline** or **integration** branch:
 
     git checkout -b release/1.0.0
 
@@ -15,7 +15,7 @@ Release branches are named using [Semantic Versioning](http://semver.org/) i.e. 
 ![alt text](./images/branching-diagram/01-branching-diagram.png)
 
 ## Release 2.0.0 Branch
-As soon as we need to commit some code that will not be part of release/1.0.0, we create a release/2.0.0 branch.
+As soon as we need to commit some code that will not be part of release/1.0.0, we create a release/2.0.0 branch. The release/2.0.0 branch now becomes the **mainline** or **integration** branch.
 
     git branch release/2.0.0
 
@@ -38,6 +38,7 @@ Again, once we need to commit code that will not be part of release/2.0.0, we cr
 
 ## Continue Indefinitely
 This process of creating one release branch per release and merging it forward can continue indefinitely.
+
 ![alt text](./images/branching-diagram/05-branching-diagram.png)
 
 ## Delete the master branch
