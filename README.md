@@ -1,6 +1,6 @@
-# A simpler Git branching model
+# A Lean Git branching model
 
-**SimplerGitFlow** is a git workflow similar to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) but simpler. It has only two types of branches, **feature branches** and **release branches**.
+**LeanGitFlow** is a git workflow similar to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) but simpler. It has only two types of branches, **feature branches** and **release branches**.
 
 This workflow is particularly suited to teams on a regular release cycle, for example **monthly or quarterly**. It is less well suited to teams releasing extremely frequently.
 
@@ -17,7 +17,7 @@ Start by creating a branch for your upcoming release:
 Release branches are named using [Semantic Versioning](http://semver.org/) i.e. **MAJOR.MINOR.PATCH**
 
 ## Delete the master branch
-**SimplerGitFlow** advocates meaningful names. The term **master** can have different meanings depending on the context. With SimplerGitFlow, we delete the master branch.
+**LeanGitFlow** advocates meaningful names. The term **master** can have different meanings depending on the context. With LeanGitFlow, we delete the master branch.
 
     git branch -d master
 
@@ -75,7 +75,7 @@ It is normal to have multiple release branches in parallel. If you are developin
     git checkout release/2.0.0
 
 ## Tag Production Ready Code
-When your code is deemed production ready, tag it. SimplerGitFlow advocates [Semantic Versioning](http://semver.org/). Any commit with a tag in the form **1.0.0** is deemed a released version. Once the code is tagged/released, there should be no more commits on that release branch.
+When your code is deemed production ready, tag it. LeanGitFlow advocates [Semantic Versioning](http://semver.org/). Any commit with a tag in the form **1.0.0** is deemed a released version. Once the code is tagged/released, there should be no more commits on that release branch.
 
     git tag 1.0.0 release/1.0.0
 
@@ -101,7 +101,7 @@ Release branches can be branched off other release branches or from a tag. This 
     git checkout -b release/1.0.1 <tagname>
 
 ## Default Branch
-Many Git Servers (GitHub, GitLab, GitStash) allow you to specify a default branch. This branch gets displayed when you browse to the repo via the web interface and gets checked out when you clone the repo. By default, it's usually master. With SimplerGitFlow, it's up to you to set the default branch to whatever release branch you see fit.
+Many Git Servers (GitHub, GitLab, GitStash) allow you to specify a default branch. This branch gets displayed when you browse to the repo via the web interface and gets checked out when you clone the repo. By default, it's usually master. With LeanGitFlow, it's up to you to set the default branch to whatever release branch you see fit.
 
 ## Not sure what to name your branch?
 If you're not certain what version your next release will be, that's not a problem. Give it a provisional version number and you can change it later. For example, if your last release was **2.2.1** then you could provisionally create a **release/2.3.0** branch. Later, you may decide that the next release will actually be **3.0.0**. In that case, simply create a **release/3.0.0** branch and delete **release/2.3.0**.
