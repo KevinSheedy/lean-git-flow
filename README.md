@@ -1,13 +1,15 @@
 # A Lean Git branching model
 
-**LeanGitFlow** is a git workflow similar to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) but simpler. It has only two types of branches, **feature branches** and **release branches**.
+**Lean Git Flow** is a branching strategy designed to be as [Lean](https://en.wikipedia.org/wiki/Lean_software_development) as possible. It has only two types of branches, **feature branches** and **release branches**.
 
 This workflow is particularly suited to teams on a regular release cycle, for example **monthly or quarterly**. It is less well suited to teams releasing extremely frequently.
 
 To customise the workflow for your own team, simply [Fork It](https://help.github.com/articles/fork-a-repo/) on GitHub and document your changes.
 
 ## The Principle of KISS ["Keep It Simple Stupid"](https://en.wikipedia.org/wiki/KISS_principle)
-What about the master, develop, integration branches? [You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it). We start with the simplest possible branching strategy and don't add any more complexity unless absolutely necessary.
+**Lean Git Flow** eliminates any unnecessary branches and merges.
+
+
 
 ## Release Branch
 Start by creating a branch for your upcoming release:
@@ -15,6 +17,8 @@ Start by creating a branch for your upcoming release:
     git checkout -b release/1.0.0
 
 Release branches are named using [Semantic Versioning](http://semver.org/) i.e. **MAJOR.MINOR.PATCH**
+
+![alt text](./images/branching-diagram/01-branching-diagram.png)
 
 ## Delete the master branch
 **LeanGitFlow** advocates meaningful names. The term **master** can have different meanings depending on the context. With LeanGitFlow, we delete the master branch.
